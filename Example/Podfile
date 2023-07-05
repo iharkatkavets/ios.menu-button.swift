@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'MenuButton_Example' do
+  pod 'MenuButton', :path => '../'
+
+  target 'MenuButton_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
