@@ -7,17 +7,28 @@
 //
 
 import UIKit
+import MenuButton
 
 class ViewController: UIViewController {
+    @IBOutlet var menuButton: MenuButton?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let symbolConfig = UIImage.SymbolConfiguration(pointSize: 32, weight: .bold, scale: .small)
+        let imageName = "chevron.down"
+        let symbolImage = UIImage(systemName: imageName, withConfiguration: symbolConfig)
+        menuButton?.imageView.image = symbolImage?.withTintColor(.green, renderingMode: .alwaysOriginal)
+        menuButton?.titleLabel.text = "The button long long title".uppercased()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func pressMenu(_ button: UIButton) {
+        print("press menu button")
+        
     }
 
 }
